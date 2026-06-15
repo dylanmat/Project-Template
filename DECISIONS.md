@@ -15,11 +15,4 @@ Use this format for each new decision:
 - Supersedes/Superseded By:
 
 ## ADR Entries
-### ADR-001 - AI Project Template Baseline
-- Date: 2026-03-15
-- Status: Accepted
-- Context: Need a reusable baseline for AI-oriented projects.
-- Decision: Standardize required root docs, Python-first defaults, and agent-driven workflows.
-- Consequences: Faster setup, better consistency, higher documentation discipline.
-- Alternatives Considered: Minimal docs-only template with no explicit agent workflow contract.
-- Supersedes/Superseded By: None
+
