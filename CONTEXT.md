@@ -1,37 +1,22 @@
-# CONTEXT
+# Project Context
 
-## System Purpose
-Describe what the system does and why it exists.
+## Template guidance
 
-## Users & Stakeholders
-- Primary users:
-- Business/technical owners:
-- Adjacent teams/dependencies:
+Capture facts that help contributors make decisions. Use the completion conventions and document ownership table in [README.md](README.md). Keep design details in architecture and permissions in security.
 
-## Operational Context
-- Runtime environments:
-- External integrations:
-- Technical/compliance constraints:
+## Project fields
 
-## Domain Vocabulary
-Define project-specific terms and acronyms used throughout docs and code.
+- Purpose and expected outcome: [REQUIRED: problem, intended capability, and outcome]
+- Primary users and stakeholders: [REQUIRED: audience, affected teams, and dependencies]
+- Accountable owners: [REQUIRED: people or teams assigned to each responsibility in the README ownership table; one owner may hold several responsibilities]
+- Runtime and operational context: [REQUIRED: actual environments and external services, or justified exclusions]
+- Constraints and assumptions: [REQUIRED: technical, business, contractual, and compliance constraints; distinguish confirmed facts from assumptions]
+- Domain vocabulary: [REQUIRED: terms contributors need to interpret requirements]
+- Current state: [REQUIRED: implemented capabilities, known limitations, and active risks]
+- Success signals: [REQUIRED: observable outcomes, measurement methods, and acceptance targets]
+- Project invariants: [REQUIRED: behavior that changes must preserve; link relevant security policy rather than duplicating it]
+- Policy adoption record: [REQUIRED: policy document/revision, approved scope, approver, and approval date; list unresolved policies separately]
 
-## Current State
-- What exists today:
-- Known limitations:
-- Active risks:
+## Completion criteria
 
-## Success Signals
-- Key outcomes:
-- Quality/reliability signals:
-- AI/evaluation signals:
-
-## Guardrails
-List do-not-break rules, safety boundaries, and compliance requirements.
-
-## Pointers
-- High-level overview: `README.md`
-- System design/details: `ARCHITECTURE.md`
-- Security expectations: `SECURITY.md`
-- Coding/testing/review conventions: `STANDARDS.md`
-- Decision history: `DECISIONS.md`
+A contributor can identify the project's goal, users, accountable owners, current limits, and success criteria. Assumptions are distinguishable from facts, and approval records identify the exact policy revisions accepted.

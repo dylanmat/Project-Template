@@ -1,34 +1,45 @@
-# STANDARDS
+# Project Standards
 
-## Coding Standards
-- Python: 4-space indentation, type hints on public APIs, clear naming.
-- Use `snake_case` for modules/functions, `PascalCase` for classes, `UPPER_SNAKE_CASE` for constants.
-- Keep provider-specific logic behind clear interfaces.
+## Template guidance
 
-## Testing Standards
-- Use deterministic tests where practical (fixed seeds, stable fixtures, mocked provider calls).
-- Separate unit/integration tests from slower `evals/` runs.
-- Add regression tests for prompt, parser, and safety-critical behavior changes.
+Select conventions and verification methods appropriate to the project. This framework requires evidence, not a particular language, UI toolkit, test runner, or directory layout. Record adopted standards and approval in [CONTEXT.md](CONTEXT.md).
 
-## Documentation Standards
-- Keep root baseline docs current: `CONTEXT.md`, `README.md`, `ARCHITECTURE.md`, `SECURITY.md`, `STANDARDS.md`, `DECISIONS.md`, `ROADMAP.md`, `CHANGELOG.md`.
-- Keep `README.md` high-level; place deep technical detail in the dedicated doc.
-- Record major technical and product decisions in `DECISIONS.md`.
+## Baseline rules
 
-## Frontend Standards
-For plain `html/css/js`, prefer Bootstrap before custom CSS.
+### Changes and documentation
 
-## Review Standards
-- PRs require passing tests/lint and clear change rationale.
-- Include impact notes when AI behavior, prompts, or eval outcomes change.
-- Link changed code to updated docs when conventions or behavior change.
+- Keep changes within approved scope and make interfaces and failure behavior understandable.
+- Update affected documents in the same reviewed change, using the ownership and update triggers in [README.md](README.md).
+- Record major design or policy tradeoffs in [DECISIONS.md](DECISIONS.md).
+- Keep guidance, unresolved project fields, proposals, and approved policy distinguishable. Do not invent approvals, test results, release dates, or milestone completion.
+- Version prompts and relevant configuration so verification evidence can identify what was evaluated.
 
-## Operational Standards
-- Use structured logging; avoid logging sensitive content.
-- Define basic run/rollback expectations for production-impacting changes.
-- Track critical dependencies and provider configuration changes in PRs.
+### Verification and evaluation evidence
 
-## AI-Specific Standards
-- Version prompts intentionally (for example `feature_name.v2.md`).
-- Validate behavior with targeted evals before merge.
-- Document provider fallback assumptions and output validation rules.
+- Define intended behavior and acceptance criteria before implementing a behavior change.
+- Cover representative successful inputs and relevant failure cases, including invalid outputs and unavailable dependencies.
+- For AI behavior changes, include cases for applicable untrusted-content, permission, and sensitive-data boundaries. Compare against the previous behavior when it exists.
+- Prefer reproducible checks; when outputs vary, record the evaluation method, repetitions, and acceptance thresholds rather than claiming certainty from one sample.
+- Record the changed revision, prompt/model/configuration identifiers where applicable, cases, method or commands, expected outcome, actual results, and limitations.
+- Protect evaluation fixtures and reports according to [SECURITY.md](SECURITY.md). Offline checks are preferred when external calls are unnecessary.
+- Documentation-only changes require link, consistency, completion-state, and diff review. They do not require artificial application tests.
+
+### Review and release gates
+
+- A reviewed change includes scope, rationale, affected documentation, verification evidence, and unresolved risks.
+- A **blocking** finding is an unmet acceptance criterion, relevant policy violation, defect preventing intended behavior, or missing evidence needed to establish readiness. Resolve it and recheck the affected behavior before approval or release.
+- A **nonblocking** finding is an improvement that does not prevent readiness. Record its rationale and, if deferred, its owner and follow-up location.
+- Review outcomes are changes requested or ready within the documented scope. A ready result is not authorization to publish or deploy.
+- Before release, confirm required checks passed, documentation is current, and no blocking findings remain. Finalize release notes and obtain authorization for the intended release action.
+
+## Project fields
+
+- Implementation conventions: [REQUIRED: chosen languages, formatting, interface conventions, and repository layout, or justified exclusions]
+- Verification methods: [REQUIRED: applicable tools/commands or manual procedures and when each runs]
+- Acceptance criteria: [REQUIRED: project quality thresholds and evaluation expectations for its actual use cases]
+- Review ownership: [REQUIRED: accountable reviewers and whether any changes require independent review]
+- Operations and rollout: [REQUIRED: logging, monitoring, rollout checks, rollback procedure, and accountable operators, or justified exclusions]
+
+## Completion criteria
+
+A contributor can determine the checks required for a proposed change, produce traceable evidence, classify review findings, and establish readiness without assuming publication permission.

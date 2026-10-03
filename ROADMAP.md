@@ -1,52 +1,50 @@
-# ROADMAP
+# Roadmap
 
-## Purpose
-Track project development priorities, sequencing, and delivery status.
+## Template guidance
 
-## Now
-### Baseline Template Hardening
-- Goal: finalize required root documentation and workflow consistency.
-- Status: In Progress
-- Owner: Project Maintainers
-- Dependencies: None
-- Target Window: Current sprint
-- Success Criteria: All required docs exist with aligned ownership and update triggers.
-- Links: `AGENTS.md`, `CONTEXT.md`, `ARCHITECTURE.md`, `SECURITY.md`, `STANDARDS.md`
+Track actual priorities, dependencies, and delivery status. Use explicit YYYY-MM-DD dates or "Unscheduled"; do not use relative windows. Mark work complete only after its acceptance evidence is available.
 
-### Quality Automation Foundation
-- Goal: add CI checks for lint and tests.
+Adopting projects replace the template-maintenance entries with their own priorities.
+
+## Reusable milestone template
+
+- Milestone: [REQUIRED: deliverable and goal]
+- Priority: Now | Next | Later
+- Status: Planned | In progress | Blocked | Complete
+- Owner: [REQUIRED: accountable person or team]
+- Dependencies: [REQUIRED: prerequisites or Not applicable with reason]
+- Target: [REQUIRED: explicit date/range or Unscheduled]
+- Acceptance criteria: [REQUIRED: observable completion conditions]
+- Evidence and related decisions: [REQUIRED: references; unresolved while work is pending]
+
+## Template-maintenance milestones
+
+### Documentation-only framework refinement
+
+- Priority: Now
+- Status: Complete
+- Owner: Requesting project maintainer
+- Dependencies: Approved refinement plan
+- Target: Unscheduled
+- Acceptance criteria: Consistent ownership and adoption conventions; scoped approval and role handoffs; actionable security and evaluation guidance; executable scaffold removed; links and diff reviewed.
+- Evidence and related decisions: [ADR-001](DECISIONS.md); verification record below.
+
+### Validate adoption in a downstream project
+
+- Priority: Next
 - Status: Planned
-- Owner: Project Maintainers
-- Dependencies: baseline scripts and test entry points
-- Target Window: Next sprint
-- Success Criteria: CI runs `ruff check` and `pytest` on pull requests.
-- Links: `STANDARDS.md`, `CHANGELOG.md`
+- Owner: Project maintainer
+- Dependencies: Verified documentation refinement and a selected downstream project
+- Target: Unscheduled
+- Acceptance criteria: Project fields completed, policies approved, and a representative change passes the documented workflow.
+- Evidence and related decisions: Unresolved - no downstream project selected.
 
-## Next
-### Evaluation Harness
-- Goal: provide reusable eval execution and reporting baseline.
-- Status: Planned
-- Owner: Project Maintainers
-- Dependencies: stable prompt/versioning conventions
-- Target Window: Near term
-- Success Criteria: template includes eval runner pattern and result reporting guidance.
-- Links: `ARCHITECTURE.md`, `STANDARDS.md`
+## Refinement verification record - 2026-10-02
 
-### Deployment and Runbook Baseline
-- Goal: define deployment/runbook scaffolding for downstream projects.
-- Status: Planned
-- Owner: Project Maintainers
-- Dependencies: quality automation foundation
-- Target Window: Near term
-- Success Criteria: templates include runbook expectations and operational handoff guidance.
-- Links: `SECURITY.md`, `STANDARDS.md`
-
-## Later
-### Project Scaffolding Automation
-- Goal: automate setup for new projects from this template.
-- Status: Planned
-- Owner: Project Maintainers
-- Dependencies: stable documentation and workflow contract
-- Target Window: Longer term
-- Success Criteria: one-command bootstrap for docs, structure, and baseline scripts.
-- Links: `README.md`, `AGENTS.md`, `CHANGELOG.md`
+- Scope and approval: documentation-only refinement and scaffold removal explicitly requested by the project maintainer; approval recorded in ADR-001.
+- Automated checks: all 29 relative document links resolved; required documents remained; obsolete scaffold paths were absent; the shared instructions pointer was unchanged; no obsolete runtime or relative scheduling requirements remained.
+- Ignore checks: root and nested environment files were ignored; example files and documentation remained visible.
+- Static review: document ownership, completion markers, approval boundaries, review gates, and final diff checked; deletions matched the approved scaffold list and no credentials were introduced. Corrected tool-output validation timing and rechecked it.
+- Sample workflow: a proposed prompt change goes from read-only Planner scope and acceptance criteria to explicit approval, scoped Implementer changes and evaluation evidence, Docs updates before merge, Reviewer blocker resolution and recheck, then Release readiness. With no publication authorization, the workflow ends at readiness.
+- Handoffs: Planner -> Implementer -> Docs -> Reviewer; the wording correction returned to Docs and Reviewer, then to Release for unreleased notes and readiness. The same agent performed these responsibilities in this conversation.
+- Outcome and limits: no unresolved blocking findings; ready for maintainer review. Runtime tests are not applicable to this documentation-only repository. Downstream adoption and actual release have not been performed.
