@@ -26,6 +26,7 @@ Select conventions and verification methods appropriate to the project. This fra
 
 ### Review and release gates
 
+- Use `vMAJOR.MINOR.PATCH` for release labels and Git tags, for example `v0.0.0` or `v0.1.0`. This format does not assign the current project a version.
 - A reviewed change includes scope, rationale, affected documentation, verification evidence, and unresolved risks.
 - A **blocking** finding is an unmet acceptance criterion, relevant policy violation, defect preventing intended behavior, or missing evidence needed to establish readiness. Resolve it and recheck the affected behavior before approval or release.
 - A **nonblocking** finding is an improvement that does not prevent readiness. Record its rationale and, if deferred, its owner and follow-up location.
